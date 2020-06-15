@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BancoVirtualModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BancoVirtualEntities1" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="SACAR">
+      <Parameter Name="AGENCIA" Mode="In" Type="String" />
+      <Parameter Name="CONTA" Mode="In" Type="String" />
+      <Parameter Name="VALOR" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="DEPOSITAR">
+      <Parameter Name="AGENCIA" Mode="In" Type="String" />
+      <Parameter Name="CONTA" Mode="In" Type="String" />
+      <Parameter Name="VALOR" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="PAGAR">
+      <Parameter Name="AGENCIA" Mode="In" Type="String" />
+      <Parameter Name="CONTA" Mode="In" Type="String" />
+      <Parameter Name="VALOR" Mode="In" Type="Decimal" />
+      <Parameter Name="TIPO" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="TRANSFERIR">
+      <Parameter Name="AGENCIA" Mode="In" Type="String" />
+      <Parameter Name="CONTA" Mode="In" Type="String" />
+      <Parameter Name="AGENCIACLI" Mode="In" Type="String" />
+      <Parameter Name="CONTACLI" Mode="In" Type="String" />
+      <Parameter Name="VALOR" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="EXTRATO" ReturnType="Collection(BancoVirtualModel.EXTRATO_Result1)">
+      <Parameter Name="AGENCIA" Mode="In" Type="String" />
+      <Parameter Name="CONTA" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="CLI_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="ContaId" Nullable="true" />
+    <Property Type="String" Name="Tipo" Nullable="true" />
+    <Property Type="String" Name="Valor" Nullable="true" />
+    <Property Type="DateTime" Name="DataHora" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="IDCLIENTE_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="TIPO" Nullable="true" />
+    <Property Type="String" Name="VALOR" Nullable="true" />
+    <Property Type="DateTime" Name="DATA_E_HORA" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="EXTRATO_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="TIPO" Nullable="true" />
+    <Property Type="String" Name="VALOR" Nullable="true" />
+    <Property Type="DateTime" Name="DATA_E_HORA" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="EXTRATO_Result1">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="TIPO" Nullable="true" />
+    <Property Type="String" Name="VALOR" Nullable="true" />
+    <Property Type="DateTime" Name="DATA_E_HORA" Nullable="true" Precision="23" />
+  </ComplexType>
+</Schema>

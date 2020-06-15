@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BancoVirtualModelStoreContainer" CdmEntityContainer="BancoVirtualEntities1">
+    <FunctionImportMapping FunctionImportName="SACAR" FunctionName="BancoVirtualModel.Store.SACAR" />
+    <FunctionImportMapping FunctionImportName="DEPOSITAR" FunctionName="BancoVirtualModel.Store.DEPOSITAR" />
+    <FunctionImportMapping FunctionImportName="PAGAR" FunctionName="BancoVirtualModel.Store.PAGAR" />
+    <FunctionImportMapping FunctionImportName="TRANSFERIR" FunctionName="BancoVirtualModel.Store.TRANSFERIR" />
+    <FunctionImportMapping FunctionImportName="EXTRATO" FunctionName="BancoVirtualModel.Store.EXTRATO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BancoVirtualModel.EXTRATO_Result1">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+          <ScalarProperty Name="DATA_E_HORA" ColumnName="DATA E HORA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

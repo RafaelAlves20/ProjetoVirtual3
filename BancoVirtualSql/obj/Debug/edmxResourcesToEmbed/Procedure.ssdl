@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BancoVirtualModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="DEPOSITAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AGENCIA" Type="varchar" Mode="In" />
+    <Parameter Name="CONTA" Type="varchar" Mode="In" />
+    <Parameter Name="VALOR" Type="money" Mode="In" />
+  </Function>
+  <Function Name="EXTRATO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AGENCIA" Type="varchar" Mode="In" />
+    <Parameter Name="CONTA" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="PAGAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AGENCIA" Type="varchar" Mode="In" />
+    <Parameter Name="CONTA" Type="varchar" Mode="In" />
+    <Parameter Name="VALOR" Type="money" Mode="In" />
+    <Parameter Name="TIPO" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SACAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AGENCIA" Type="varchar" Mode="In" />
+    <Parameter Name="CONTA" Type="varchar" Mode="In" />
+    <Parameter Name="VALOR" Type="money" Mode="In" />
+  </Function>
+  <Function Name="TRANSFERIR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AGENCIA" Type="varchar" Mode="In" />
+    <Parameter Name="CONTA" Type="varchar" Mode="In" />
+    <Parameter Name="AGENCIACLI" Type="varchar" Mode="In" />
+    <Parameter Name="CONTACLI" Type="varchar" Mode="In" />
+    <Parameter Name="VALOR" Type="money" Mode="In" />
+  </Function>
+  <EntityContainer Name="BancoVirtualModelStoreContainer" />
+</Schema>
